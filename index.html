@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <style>
+    h2{
+      display: none;
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.6/xlsx.full.min.js"></script>
+</head>
+<body>
+  
+  <div class="container m-5">
+    <h1 class="text-center mb-4">Prakriti Student's Interview</h1>
+    <div class="row d-flex justify-content-center ">
+      <div class="col-10 custom-file">
+        <input type="file" id="my_file_input"  accept=".xls, .xlsx" class="form-control" required/>
+      </div>
+      <div class="col-2">
+        <button id="button" type="button" class="btn btn-outline-secondary">Result</button>
+      </div>    
+    </div>
+    <div class="my-5">
+      <div>
+        <h2 id="two">Students in Two Departments</h2>
+        <pre id="two-departments"></pre>
+      </div>
+      <div>
+        <h2 id="three">Students in Three Departments</h2>
+        <pre id="three-departments"></pre>
+      </div>
+    </div>
+
+  </div>
+
+
+  
+
+  <script src="js-file.js"></script>
+</body>
+</html>
