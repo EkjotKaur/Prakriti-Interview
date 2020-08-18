@@ -40,11 +40,15 @@ document.getElementById("button").addEventListener("click", () => {
             }
           }
 
-          m = student[0] > student[1] ? student[0] : student[1];
-          let max = m > student[2] ? m : student[2];
-          let middle = m < student[2] ? m : student[2];
-          n = student[0] < student[1] ? student[0] : student[1];
-          let min = n < student[2] ? n : student[2];
+          
+          
+          let arr = [student[0], student[1], student[2]];
+          console.log(arr);
+          arr.sort();
+          console.log(arr);
+          let min = arr[0];
+          let middle = arr[1];
+          let max = arr[2];
 
           if(!threeDepartments[[max + "//" + middle + "//" + min]]){
             threeDepartments[[max + "//" + middle + "//" + min]] = 1;
