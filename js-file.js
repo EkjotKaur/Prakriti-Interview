@@ -22,21 +22,67 @@ document.getElementById("button").addEventListener("click", () => {
         var threeDepartments = {};
 
         rowObject.forEach(student => {
-          for(var i =0; i<3; i++){
-            if(i===2){
-              j=0;
-            } else {
-              j=i+1;
-            }
-
-            let m = student[i] > student[j] ? student[i] : student[j];
-            let n = student[i] < student[j] ? student[i] : student[j];
-
-            if(!twoDepartments[[m + "//" + n]]){
-              twoDepartments[[m + "//" + n]] = 1;
+          if(student[0] === student[1] && student[2] === student[1]){
+            if(!twoDepartments[[student[0] + "//" + student[0]]]){
+              twoDepartments[[student[0] + "//" + student[0]]] = 1;
             }
             else {
-              twoDepartments[[m + "//" + n]] += 1;
+              twoDepartments[[student[0] + "//" + student[0]]] += 1;
+            }
+          }
+          else if(student[0] === student[1] || student[1] === student[2] || student[0]===student[2]){
+            for(var i=0; i<3;i++){
+              if(i===2){
+                j=0;
+                k=1;
+              } else if(i===1) {
+                j=i+1;
+                k=0;
+              } else {
+                j=i+1;
+                k=i+2;
+              }
+              if(student[i] === student[j]){
+                let m = student[i] > student[k] ? student[i] : student[k];
+                let n = student[i] < student[k] ? student[i] : student[k];
+                console.log(m + " // " + n);
+
+                if(!twoDepartments[[m + "//" + n]]){
+                  twoDepartments[[m + "//" + n]] = 1;
+                }
+                else {
+                  twoDepartments[[m + "//" + n]] += 1;
+                }
+                if(!twoDepartments[[student[i] + "//" + student[i]]]){
+              twoDepartments[[student[i] + "//" + student[i]]] = 1;
+                }
+                else {
+                  twoDepartments[[student[i] + "//" + student[i]]] += 1;
+                }
+              }
+            }
+          }
+          else{
+
+          
+            for(var i =0; i<3; i++){
+              
+              if(i===2){
+                j=0;
+              } else {
+                j=i+1;
+              }
+
+              let m = student[i] > student[j] ? student[i] : student[j];
+              let n = student[i] < student[j] ? student[i] : student[j];
+              console.log(m + " // " + n);
+
+              if(!twoDepartments[[m + "//" + n]]){
+                twoDepartments[[m + "//" + n]] = 1;
+              }
+              else {
+                twoDepartments[[m + "//" + n]] += 1;
+              }
             }
           }
 
